@@ -114,7 +114,14 @@ console.log(user.scream()); //O(1)
         }
     
     keys() {
-        
+        const keysArray = [];
+
+        for (let i = 0; i < this.data.length; i++) {
+            if(this.data[i]) {
+                keysArray.push(this.data[i][0][0])
+            }
+        }
+        return keysArray;
     }
   }
   const myHashTable = new HashTable(50);
@@ -122,3 +129,77 @@ console.log(user.scream()); //O(1)
   console.log(myHashTable.get('grapes'))
   console.log(myHashTable.set('apples', 9))
   console.log(myHashTable.get('apples'))
+
+  // hash tables re great when you want quick accesss to 
+  // values. Sarch / insert / lookup / and delete are all very 
+  // fast in hashtables. 
+
+
+// FIRST REOCURRING CHARACTER
+
+//Google Question
+//Given an array = [2,5,1,2,3,5,1,2,4]:
+//It should return 2
+
+//Given an array = [2,1,1,2,3,5,1,2,4]:
+//It should return 1
+
+//Given an array = [2,3,4,5]:
+//It should return undefined
+
+//.......nieve approarch 
+
+  function firstReocurringCharacter(input) {
+      for (let i = 0; i <input.length; i++) {
+        for (let j = i + 1; i <input.length; j++) {
+            if(input[i] === input[j]) {
+                return input[i];
+            }
+      }
+    }
+    return undefined;
+  } //O(n^2)
+
+
+  firstReocurringCharacter()
+
+function firstRecurringCharacter2(input) {
+    let map = {};
+
+    for (let i = 0; i < input.lenght; i++) {
+        if(map[input[i]] !== undefined) {
+            return input[i]
+        } else {
+            map[input[i]] = i
+        }
+    }
+    return undefined
+} //O(n)
+
+
+// function firstRecurringCharacter(input) {
+//     for (let i = 0; i < input.length; i++) {
+//       for (let j = i + 1; j < input.length; j++) {
+//         if(input[i] === input[j]) {
+//           return input[i];
+//         }
+//       }
+//     }
+//     return undefined
+//   }
+  
+//   function firstRecurringCharacter2(input) {
+//     let map = {};
+//     for (let i = 0; i < input.length; i++) {
+//       if (map[input[i]] !== undefined) {
+//         return input[i]
+//       } else {
+//         map[input[i]] = i;
+//       }
+//     }
+//     return undefined
+//   }
+  
+//   firstRecurringCharacter2([1,5,5,1,3,4,6])
+  
+  

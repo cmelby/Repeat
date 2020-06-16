@@ -94,7 +94,7 @@ console.log(comntainsCommonItem3(array1, array2));
 
 
 //========================================================>
-// Google Interview answer
+// Google Interview answer for HAS PAIR WITH SUM
 // (Set: Constructor ) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 // Naive
 function hasPairWithSum(arr, sum){
@@ -106,7 +106,7 @@ function hasPairWithSum(arr, sum){
        }
     }
   
-    return false;
+    return false;// O(n)
   }
   
   // Better

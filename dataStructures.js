@@ -133,7 +133,7 @@ const reverseES62 = str => [...str].reverse().join('');
 
 // ANOTHER INTERVIEW QUESTION 
 /*
-Given two arrays that are sortede can you merge them and keep
+Given two arrays that are sorted can you merge them and keep
 them sorted?
  */
 
