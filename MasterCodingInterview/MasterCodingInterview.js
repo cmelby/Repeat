@@ -168,7 +168,7 @@ function printAllNumbersThenAllPairSums(numbers) {
 
 printAllNumbersThenAllPairSums([1,2,3,4,5])
 
-Big O of this is O(n + n^2) beaacus the first loop is O(n) then there 
+Big O of this is O(n + n^2) beacus the first loop is O(n) then there 
 is a consecuvtive indentation which is + and then we have a nested loop 
 which is O(n^2) which equals O(n + n^2). 
 

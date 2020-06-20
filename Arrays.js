@@ -102,7 +102,7 @@ class MyArray {
 // 'sirhC si emaN yM iH'  
 
   function reverse(str) {
-//   // the first thing that we want to do is check the input. What if someone calls this function with a number or undeefined?
+// the first thing that we want to do is check the input. What if someone calls this function with a number or undefined?
     if(!str || str.length < 2 || typeof str !== 'string') {
         return 'hmmmm, this doesnt seem to be a string';
     }
@@ -126,7 +126,7 @@ console.log(reverseMethod('Hi My Name is Chris'));
 // ES6
 const reverseES6 = str => str.split('').reverse().join('');
 
-// ES6 spread operaator approach
+// ES6 spread operator approach
 const reverseES62 = str => [...str].reverse().join('');
 
 
@@ -168,7 +168,6 @@ them sorted?
     }
     return mergedArray;
   }
-  
   console.log(mergeSortedArrays([0,3,4,31], [3,4,6,30]));
 
   // one thing to note is that arrays are great for sorting beacuse in terms of thier memory they are

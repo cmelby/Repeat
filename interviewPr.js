@@ -46,27 +46,27 @@ const array2 = ['x','h','a' ];
 // array2[idex] === obj.properties
 
 // Step 8
-// function comntainsCommonItem2(arr1, arr2) {
+function comntainsCommonItem2(arr1, arr2) {
     // loop through first arr and create obj 
     // where properties === itme in array 
     // sequential steps instead of nested
     // so we will then have O(a + b). One step after the other.
-    // let map = {};
-    // for (let i=0; i <arr1.length; i++){
-    //     if(!map[arr1[i]]) { // if their is no map element 
-    //         const item = arr1[i]; // create new element item & set it equal to the arr i  
-    //         map[item] = true; // set that new element as a key in the map obj with a value of true.
-    //     }
-    // }
+    let map = {};
+    for (let i=0; i <arr1.length; i++){
+        if(!map[arr1[i]]) { // if their is no map element 
+            const item = arr1[i]; // create new element item & set it equal to the arr i  
+            map[item] = true; // set that new element as a key in the map obj with a value of true.
+        }
+    }
   // loop through second array and check if item 
-    // in second array exists on created obj.
-//     for (let j=0; j < arr2.length; j++) {
-//         if(map[arr2[j]]) {
-//             return true;
-//         }
-//     }
-//     return false
-// }
+  //   in second array exists on created obj.
+    for (let j=0; j < arr2.length; j++) {
+        if(map[arr2[j]]) {
+            return true;
+        }
+    }
+    return false
+}
 
 // O(a + b) although faster:
 // O(a) - Space complexity is heavier beacuse we are creating new objs.

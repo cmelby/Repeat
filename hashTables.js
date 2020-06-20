@@ -51,7 +51,7 @@ let user = {
 console.log(user); //O(1)
 console.log(user.spell = 'abra kadabra'); //O(1)
 console.log(user.scream()); //O(1)
-// collisions are O(n/k) k being the size of your has table but beacuse 
+// collisions are O(n/k) k being the size of your hash table but beacuse 
 // we remove constance it becomes O(n/k)
 // CONS:
 /** 
