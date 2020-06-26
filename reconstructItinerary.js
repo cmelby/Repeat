@@ -25,24 +25,24 @@ Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","
              But it is larger in lexical order.
  */
 
-// let tickets = [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]];
-let findItinerary = function(ticekts) {
+let tickets = [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]];
+var findItinerary = function(tickets) {
     let map = new Map();
     let result = [];
     let numberOfTickets = 0;
-
-    for(let i = 0; i < tickets.length; i++) {
-        if(map.has(tickets[i][0])) {
-            map.get(tickets[i][0]).push(ticekts[0][1]);
-            let sortedDestinations = map.get(ticekts[i][0]).sort();
-            map.set(ticekts[i][0], sortedDestinations);
-        } else {
+    for(let i=0; i<tickets.length; i++){
+        if(map.has(tickets[i][0])){
+            map.get(tickets[i][0]).push(tickets[i][1]);
+            let sortedDestinations = map.get(tickets[i][0]).sort();
+            map.set(tickets[i][0], sortedDestinations);
+        }else{
             let destinations = [];
             destinations.push(tickets[i][1]);
             map.set(tickets[i][0], destinations);
         }
     }
     result.push("JFK");
+
     function DFS(key){
         if(!map.has(key)) return;
         let destinations = map.get(key);
@@ -59,8 +59,9 @@ let findItinerary = function(ticekts) {
         }
     }
     DFS('JFK');
+    
     return result;
-}
+};
 console.log(findItinerary(tickets));
 
 
@@ -100,3 +101,5 @@ var findItinerary = function(tickets) {
     return res;
 };
 console.log(findItinerary(tickets));
+
+
