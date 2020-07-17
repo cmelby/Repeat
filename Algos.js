@@ -75,6 +75,7 @@ Could you do both operations in O(1) time complexity? */
   }
 
 
+
 //====================== zig zag traversal of Binary tree =================//
 // Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
 
@@ -205,6 +206,7 @@ var removeDuplicates = function(nums) {
   
 };
 
+console.log(removeDuplicates(nums.legnth));
 
 // Write code that returns true if `str` is a palindrome, and false if `str` is not a palindrome
 
@@ -221,6 +223,17 @@ function palindromeCheck(str) {
 
 console.log(palindromeCheck('level'))
 
+function palindromeCheck(str) {
+  let reverseStr = str.split('').reverse().join('')
+
+  if(reverseStr === str) {
+    return true
+  } else {
+    return false
+  }
+}
+
+
 
 // RETURNS THE FACTORIAL OF NUM...................................................
 // Write code to create a function that returns the factorial of `num`
@@ -234,7 +247,7 @@ let result = 1;
   return result;
 
 } // O(n)
-3
+//3
 console.log("The factorial of 24 is: " + factorial(24));
 
 //PRODUCT OF TWO LARGEST..........................................................
@@ -286,6 +299,18 @@ for (let i = 0; i < nums.length; i++) {
 }
 }
 console.log(twoSum(nums, target))
+
+function twoSum2(nums, target) {
+  let map = new Map
+
+  for(let i = 0; i < nums.legnth; i++) {
+    let compliment = target - nums[i] 
+    if(map.has(compliment)) {
+      return [map.get(compliment), i]
+    }
+    map.set(nums[i], i)
+  }
+}
 
 // FIRST REOCURRING CHARACTER.....................................................
 
