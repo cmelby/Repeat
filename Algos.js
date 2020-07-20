@@ -300,17 +300,6 @@ for (let i = 0; i < nums.length; i++) {
 }
 console.log(twoSum(nums, target))
 
-function twoSum2(nums, target) {
-  let map = new Map
-
-  for(let i = 0; i < nums.legnth; i++) {
-    let compliment = target - nums[i] 
-    if(map.has(compliment)) {
-      return [map.get(compliment), i]
-    }
-    map.set(nums[i], i)
-  }
-}
 
 // FIRST REOCURRING CHARACTER.....................................................
 
@@ -330,31 +319,19 @@ let input = [2,5,1,2,3,5,1,2,4];
 // let input = [2,3,4,5];
 // let input = [2,1,1,2,3,5,1,2,4];
 
-// function firstReocurringChar(input) {
-//     for(let i = 0; i < input.length; i++) {
-//         for(let j = 0; j < input.length; i++) {
-//             if(input[i] === input[j]) {
-//                 return input[i]
-//             }
-//         }
-//     }
-//     return undefined
-// } 
-
-// console.log(firstReocurringChar(input))
-
-function firstReocurringChar2(input) {
-let map = {};
-for(let i = 0; i < input.length; i++) {
-  if(map[input[i]] !== undefined) {
-      return input[i]
-  } else {
-      map[input[i]] = i
-  }
+function firstReocurringChar(input) {
+    for(let i = 0; i < input.length; i++) {
+        for(let j = 0; j < input.length; i++) {
+            if(input[i] === input[j]) {
+                return input[i]
+            }
+        }
+    }
+    return undefined
 } 
-return undefined;
-}
-console.log(firstReocurringChar2(input));
+
+console.log(firstReocurringChar(input))
+
 
 //CONTAINS COMMON ITEMS -- BETTER APPROACH........................................
 const array1 = ['a','b','c','d', ];
@@ -378,7 +355,8 @@ function containsCommonItem(arr1, arr2) {
   }
   return false
 }
-console.log(containsCommonItem(array1, array2))
+console.log(containsCommonItem(arr1, arr2))
+
 
 // REVERESE STRING..............................................................
 //solution
@@ -401,6 +379,16 @@ function reverseStr(str) {
   return str.split('').reverse().join('') 
  }
  console.log(reverseInPlace(str))
+
+let reverseStr = function(str) {
+  let reverseStr = '';
+
+  for(let i = str.length -1; i >= 0; i--) {
+    reverseStr += str[i]
+  }
+  return reverseStr
+}
+
  
  // ARE DUPLICATES..........................................
 /*## Are-Dups
@@ -459,6 +447,20 @@ return pairs;
 }
 console.log(pairCount(array3))
 
+let countpairs = function(arr) {
+  let obj = {};
+  let pairs = 0; 
+
+  for(let i = 0; i < arr.length; i++) {
+    if(obj[arr[i]]) {
+      obj[arr[i]] = 0;
+      pairs ++
+    } else {
+      obj[arr[i]] = true
+    }
+  }
+  return pairs;
+}
 
 //=============== Rotate Array in Place ====================//
 
@@ -521,3 +523,4 @@ var reverseList = function(head) {
   
   return recursiveReverse(head, null)
 };
+
