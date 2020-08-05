@@ -300,6 +300,18 @@ for (let i = 0; i < nums.length; i++) {
 }
 console.log(twoSum(nums, target))
 
+let TwoSum = function(nums, target) {
+  let map = new Map;
+
+  for (let i = 0; i < nums.length; i++) {
+    let compliment = target - nums[i]
+    if(map.has(compliment)) {
+      return [map.get(compliment), i];
+    }
+    map.set(nums[i], i);
+  }
+}
+
 
 // FIRST REOCURRING CHARACTER.....................................................
 
@@ -388,7 +400,6 @@ let reverseStr = function(str) {
   }
   return reverseStr
 }
-
  
  // ARE DUPLICATES..........................................
 /*## Are-Dups
