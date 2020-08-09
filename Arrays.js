@@ -125,6 +125,7 @@ console.log(reverseMethod('Hi My Name is Chris'));
 
 // ES6
 const reverseES6 = str => str.split('').reverse().join('');
+const reverseES6 = str => str.split('').reverse().join('');
 
 // ES6 spread operator approach
 const reverseES62 = str => [...str].reverse().join('');
@@ -197,6 +198,17 @@ let target = 9;
 
 console.log(twoSum(nums, target));
 
+let twoSum = function(nums, target) {
+  let map = new Map;
+
+  for(var i = 0; i < nums.length; i++) {
+    let complement = traget - nums[i];
+    if(map.has(complement)) {
+      (map.get(complement), i);
+    }
+    return [map.set(nums[i], i)]
+  }
+}
 
 //Maximum SubArray...........
 
