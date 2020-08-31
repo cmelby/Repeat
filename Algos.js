@@ -223,8 +223,7 @@ function palindromeCheck(str) {
 
 console.log(palindromeCheck('level'))
 
-// Repeat this. 
-
+//
 // RETURNS THE FACTORIAL OF NUM...................................................
 // Write code to create a function that returns the factorial of `num`
 
@@ -290,7 +289,18 @@ for (let i = 0; i < nums.length; i++) {
 }
 console.log(twoSum(nums, target))
 
+function twoSum(nums, target) {
+  let map = new Map;
 
+  for (let i=0; i<nums.length; i++) {
+    let compliment = target - nums[i];
+    if(map.has(compliment)) {
+      return [map.get(compliment)]
+    }
+    map.set(nums[i], i)
+  }
+}
+console.log((nums, target))
 // FIRST REOCURRING CHARACTER.....................................................
 
 //Google Question
