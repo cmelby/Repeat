@@ -38,10 +38,12 @@ const longestMountain = A => {
 
 
   //================== LRU CACHE ==================================//
-  /**Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.
+  /**Design and implement a data structure for Least Recently Used (LRU) cache.
+   *  It should support the following operations: get and put.
 
 get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
-put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+put(key, value) - Set or insert the value if the key is not already present. When the cache reached its 
+capacity, it should invalidate the least recently used item before inserting a new item.
 
 The cache is initialized with a positive capacity.
 
@@ -74,6 +76,32 @@ Could you do both operations in O(1) time complexity? */
     };
   }
 
+  class LRUCache {
+    constructor(capacity) {
+      this.cache = new Map();
+      this.capacity = capacity;
+    }
+
+    get(key) {
+      if(!this.cache.has(key)) return -1;
+
+      const value = this.cache.get(key);
+      this.cache.delete(key);
+      this.cache.set(key, value);
+      return this.cache.get(key)
+    }
+
+    put(key, value) {
+      if(this.cache.has(key)) {
+        this.cache.delete(key);
+      }
+      this.cache.set(key, value);
+      if(this.cache.size > this.capacity) {
+
+        this.cache.delete(this.cache.keys().next().value); //keys().next().value returns first items key
+      }
+    }
+  }
 
 
 //====================== zig zag traversal of Binary tree =================//
