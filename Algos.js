@@ -446,20 +446,22 @@ return pairs;
 }
 console.log(pairCount(array3))
 
-let countpairs = function(arr) {
+function pairCount(arr) {
   let obj = {};
-  let pairs = 0; 
+  let pairs = 0;
 
-  for(let i = 0; i < arr.length; i++) {
+  for(let i=0; i < arr.length; i++) {
     if(obj[arr[i]]) {
-      obj[arr[i]] = 0;
-      pairs ++
+      obj[arr[i]] = 0
+      pairs++
     } else {
       obj[arr[i]] = true
     }
   }
   return pairs;
 }
+console.log(pairCount(array3))
+
 
 //=============== Rotate Array in Place ====================//
 
