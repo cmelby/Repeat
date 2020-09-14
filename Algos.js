@@ -103,6 +103,8 @@ Could you do both operations in O(1) time complexity? */
     }
   }
 
+  
+
 
 //====================== zig zag traversal of Binary tree =================//
 // Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
@@ -236,6 +238,17 @@ var removeDuplicates = function(nums) {
 
 console.log(removeDuplicates(nums.legnth));
 
+lel removeDuplicates = function(nums) {
+  for(let i =0; i < nums.length; i++) {
+    if(nums[i] === nums[i + 1]) {
+      nums.splice(i, 1)
+      i -= 1
+    }
+  }
+  return nums.length;
+}
+console.log(removeDuplicates(nums.length))
+
 // Write code that returns true if `str` is a palindrome, and false if `str` is not a palindrome
 
 function palindromeCheck(str) {
@@ -250,6 +263,19 @@ function palindromeCheck(str) {
 } // O(1)
 
 console.log(palindromeCheck('level'))
+
+let palindromeCheck = function(str) {
+  let reverseStr = str.split('').reverse().join('');
+
+  for(let i = 0; i < str.length; i ++) {
+    if(reverseStr === str) {
+      return true;
+    }
+    else return false
+  }
+}// 0(1)
+console.log(palidromeCheck('level'))
+
 
 //
 // RETURNS THE FACTORIAL OF NUM...................................................
