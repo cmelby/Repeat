@@ -125,7 +125,7 @@ console.log(reverseMethod('Hi My Name is Chris'));
 
 // ES6
 const reverseES6 = str => str.split('').reverse().join('');
-const reverseES6 = str => str.split('').reverse().join('');
+const reverseES6 = str => str.split('').reverse().join('')
 
 // ES6 spread operator approach
 const reverseES62 = str => [...str].reverse().join('');
