@@ -579,3 +579,16 @@ var reverseList = function(head) {
   return recursiveReverse(head, null)
 };
 
+var reverseList = function(head) {
+  let reversed = null;
+
+  while(head) {
+    const next = head.next;
+    head.next = reversed;
+    reversed = head;
+    head = next;
+  }
+  return reversed;
+}
+
+
